@@ -1,0 +1,260 @@
+{
+	"title": "Aplicación transaccional de EPS Uniandes",
+	"frameH": 600,
+	"frameW": 800,
+	"bannerPath": "./src/main/resources/config/logo.png",
+	"menuBar":
+	[
+
+
+		
+		{ "menuTitle": "Consultas",
+		  "options":
+			[
+				{
+					"label": "RFC1 servicios prestados por IPS",
+					"event": "rfc1"
+				},
+				{
+					"label": "RFC2 20 SERVICIOS MAS SOLICITADOS",
+					"event": "rfc2"
+				},
+				{
+					"label": "RFC6 Analizar operacion EPSAndes",
+					"event": "rfc6"
+				},
+				{
+					"label": "RFC7 Afiliados Exigentes",
+					"event": "rfc7"
+				}
+
+
+
+			]
+		},
+
+		{ "menuTitle": "EPS",
+		  "options":
+			[
+				{
+					"label": "Adicionar",
+					"event": "adicionarEPS"
+				}
+			]
+		},
+		
+		{ "menuTitle": "IPS",
+		  "options":
+			[
+				{
+					"label": "Adicionar",
+					"event": "adicionarIPS"
+				},
+				
+				{
+					"label": "Adicionar Recepcionista",
+					"event": "adicionarRecepcionistaIPS"
+				}
+				
+			]
+		},
+		
+		{ "menuTitle": "USUARIOEPS",
+		  "options":
+			[
+				{
+					"label": "Adicionar",
+					"event": "adicionarUsuarioEPS"
+				}
+			]
+		},
+		
+		{ "menuTitle": "USUARIOIPS",
+		  "options":
+			[
+				{
+					"label": "Adicionar",
+					"event": "adicionarUsuarioIPS"
+				}
+			]
+		},
+		
+		{ "menuTitle": "MEDICO",
+		  "options":
+			[
+				{
+					"label": "Adicionar",
+					"event": "adicionarMedico"
+				},
+				
+				{
+					"label": "AsociarMedicoIPS",
+					"event": "adicionarMedicoIPS"
+				}
+			]
+		},
+		
+		
+		{ "menuTitle": "SERVICIO SALUD",
+		  "options":
+			[
+				{
+					"label": "Adicionar Consulta",
+					"event": "adicionarConsulta"
+				},
+				
+				{
+					"label": "Adicionar Terapia",
+					"event": "adicionarTerapia"
+				},
+				
+				{
+					"label": "Adicionar Procedimiento Especial",
+					"event": "adicionarProcedimientoEsp"
+				},
+				
+				{
+					"label": "Adicionar Hospitalizacion",
+					"event": "adicionarHospitalizacion"
+				}
+			]
+		},
+		
+		
+		{ "menuTitle": "CITA",
+		  "options":
+			[
+				{
+					"label": "Adicionar",
+					"event": "adicionarCita"
+				}
+			]
+		},
+		
+		{ "menuTitle": "RECETA",
+		  "options":
+			[
+				{
+					"label": "Adicionar Receta",
+					"event": "adicionarReceta"
+				}, 
+				
+				{
+					"label": "Adicionar Orden de SS: Consulta",
+					"event": "adicionarOrdenConsulta"
+				},
+				
+				{
+					"label": "Adicionar Orden de SS: Terapia",
+					"event": "adicionarOrdenTerapia"
+				},
+				
+				{
+					"label": "Adicionar Orden de SS: Procedimiento Especial",
+					"event": "adicionarOrdenProcedimientoEsp"
+				},
+				
+				{
+					"label": "Adicionar Orden de SS: Hospitalizacion",
+					"event": "adicionarOrdenHospitalizacion"
+				}
+			]
+		},
+		
+		
+		{ "menuTitle": "CAMPANIA",
+		  "options":
+			[
+				{
+					"label": "Adicionar",
+					"event": "adicionarCampaniaPrevencion"
+				},
+				
+				{
+					"label": "Eliminar ss asociado a una campania de prevencion",
+					"event": "desreservarSSCampania"
+				},
+				
+				{
+					"label": "ReaperturaSS",
+					"event": "reaperturaServicio"
+				}
+			]
+		},{ "menuTitle": "Consultas IT3",
+		  "options":
+			[
+				{
+					"label": "Consultar funcionamiento",
+					"event": "consultarFuncionamiento"
+				}
+			]
+		},
+		
+		
+		{ "menuTitle": "Mantenimiento",
+		  "options":
+			[
+				{
+					"label": "Mostrar log EpsAndes",
+					"event": "mostrarLogEpsAndes"
+				},
+				{
+					"label": "Mostrar log datanucleus",
+					"event": "mostrarLogDatanuecleus"
+				},
+				{
+					"label": "Limpiar log de epsandes",
+					"event": "limpiarLogEpsAndes"
+				},
+				{
+					"label": "Limpiar log de datanucleus",
+					"event": "limpiarLogDatanucleus"
+				},
+				{
+					"label": "Limpiar Base de Datos",
+					"event": "limpiarBD"
+				}
+			]
+		},		
+		{ "menuTitle": "Documentación",
+		  "options":
+			[
+				{
+					"label": "Presentación general",
+					"event": "mostrarPresentacionGeneral"
+				},
+				{
+					"label": "Modelo conceptual",
+					"event": "mostrarModeloConceptual"
+				},
+				{
+					"label": "Esquema de la BD",
+					"event": "mostrarEsquemaBD"
+				},
+				{
+					"label": "Script creación de la BD",
+					"event": "mostrarScriptBD"
+				},
+				{
+					"label": "Arquitectura de referencia",
+					"event": "mostrarArqRef"
+				},
+				{
+					"label": "Javadoc Parranderos",
+					"event": "mostrarJavadoc"
+				}
+			]
+		},		
+		{ "menuTitle": "Acerca de ...",
+		  "options":
+			[
+				{
+					"label": "Acerca de ...",
+					"event": "acercaDe"
+				}
+			]
+		}		
+		
+	]
+}
+	

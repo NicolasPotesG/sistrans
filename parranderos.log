@@ -1,0 +1,192 @@
+11:42:05,711 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+11:42:05,809 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Borrada la base de datos
+11:42:05,810 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+16:37:49,330 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazParranderosDemo] - Se encontró un archivo de configuración válido: Interfaz
+16:37:49,330 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazParranderosDemo] - Se aplica configuración indicada en el archivo de configuración
+16:37:49,345 (main) INFO  [uniandes.isis2304.parranderos.interfazDemo.InterfazParranderosDemo] - Se encontró un archivo de configuración válido: Tablas BD
+16:44:00,265 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Tipo de bebida: Vino tinto
+16:44:01,015 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Tipo de bebida: TipoBebida [id=1, nombre=Vino tinto]
+16:44:01,015 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Tipos de bebida
+16:44:01,030 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Tipos de bebida: 1 existentes
+16:44:01,030 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Eliminando Tipo de bebida por id: 1
+16:44:01,249 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Eliminando Tipo de bebida por id: 1 tuplas eliminadas
+16:44:12,383 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Tipo de bebida: Vino tinto
+16:44:12,399 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Tipo de bebida: TipoBebida [id=2, nombre=Vino tinto]
+16:44:12,399 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando bebida 120
+16:44:12,430 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando bebida: Bebida [id=3, nombre=120, idTipoBebida=2, gradoAlcohol=10]
+16:44:12,430 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando bebedor: Pepito
+16:44:12,462 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando bebedor: Bebedor [id=4, nombre=Pepito, ciudad=Bogotá, presupuesto=Alto]
+16:44:12,462 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando gustan [4, 3]
+16:44:12,493 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando gustan: Gustan [idBebedor=4, idBebida=3] tuplas insertadas
+16:44:12,493 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Tipos de bebida
+16:44:12,493 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Tipos de bebida: 1 existentes
+16:44:12,493 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de las bebidas
+16:44:12,508 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de las bebidas: 1 existentes
+16:44:12,508 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Bebedores
+16:44:12,727 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Bebedores: 1 bebedores existentes
+16:44:12,727 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Gustan
+16:44:12,743 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Gustan: 1 Gustan existentes
+16:44:12,743 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Eliminando gustan
+16:44:12,962 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Eliminando gustan: 1 tuplas eliminadas
+16:44:12,962 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Eliminando bebida por nombre: 120
+16:44:12,993 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Eliminando bebida por nombre: 1 tuplas eliminadas
+16:44:12,993 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Eliminando Tipo de bebida por nombre: Vino tinto
+16:44:13,008 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Eliminando Tipo de bebida por nombre: 1 tuplas eliminadas
+16:44:13,008 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Eliminando bebedor por nombre: Pepito
+16:44:13,024 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Eliminando bebedor por nombre: 1 tuplas eliminadas
+16:45:48,804 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Tipo de bebida: Vino tinto
+16:45:48,835 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Tipo de bebida: TipoBebida [id=5, nombre=Vino tinto]
+16:45:48,835 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando bebida 120
+16:45:48,851 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando bebida: Bebida [id=6, nombre=120, idTipoBebida=5, gradoAlcohol=10]
+16:45:48,851 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando bar: Los Amigos
+16:45:48,882 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando bar: Bar [id=7, nombre=Los Amigos, ciudad=Bogotá, presupuesto=Bajo, cantSedes=2]
+16:45:48,882 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando bebedor: Pepito
+16:45:48,898 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando bebedor: Bebedor [id=8, nombre=Pepito, ciudad=Bogotá, presupuesto=Alto]
+16:45:48,898 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando visitan [8, 7]
+16:45:48,929 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando visitan: Visitan [idBebedor=8, idBar=7, fechaVisita=2019-09-13 16:45:48.898, horario=diurno] tuplas insertadas
+16:45:48,929 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando visitan [8, 7]
+16:45:49,148 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando visitan: Visitan [idBebedor=8, idBar=7, fechaVisita=2019-09-13 16:45:48.929, horario=nocturno] tuplas insertadas
+16:45:49,148 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando visitan [8, 7]
+16:45:49,164 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando visitan: Visitan [idBebedor=8, idBar=7, fechaVisita=2019-09-13 16:45:49.148, horario=todos] tuplas insertadas
+16:45:49,164 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando gustan [8, 6]
+16:45:49,382 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando gustan: Gustan [idBebedor=8, idBebida=6] tuplas insertadas
+16:45:49,382 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Tipos de bebida
+16:45:49,586 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Tipos de bebida: 1 existentes
+16:45:49,586 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de las bebidas
+16:45:49,601 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de las bebidas: 1 existentes
+16:45:49,601 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Bares
+16:45:49,617 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Bares: 1 bares existentes
+16:45:49,617 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Bebedores
+16:45:49,632 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Bebedores: 1 bebedores existentes
+16:45:49,632 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Gustan
+16:45:49,632 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Gustan: 1 Gustan existentes
+16:45:49,632 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Visitan
+16:45:49,867 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Visitan: 3 Visitan existentes
+16:45:49,867 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Dar información COMPLETA de un bebedor por id: 8
+16:45:49,898 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Bebedor [id=8, nombre=Pepito, ciudad=Bogotá, presupuesto=Alto]
+16:45:49,898 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Eliminando gustan
+16:45:49,914 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Eliminando gustan: 1 tuplas eliminadas
+16:45:49,914 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Eliminando bebida por nombre: 120
+16:45:50,133 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Eliminando bebida por nombre: 1 tuplas eliminadas
+16:45:50,133 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Eliminando Tipo de bebida por nombre: Vino tinto
+16:45:50,148 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Eliminando Tipo de bebida por nombre: 1 tuplas eliminadas
+16:45:50,148 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Eliminando bebedor con sus visitas v1: 8
+16:45:50,164 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Eliminando bebedor con sus visitas v1: 1 bebedor y 3 visitas
+16:45:50,164 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Eliminando bar por nombre: Los Amigos
+16:45:50,195 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Eliminando bar: 1 tuplas eliminadas
+16:45:59,612 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Tipo de bebida: Vino tinto
+16:45:59,643 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Tipo de bebida: TipoBebida [id=9, nombre=Vino tinto]
+16:45:59,643 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando bebida 120
+16:45:59,659 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando bebida: Bebida [id=10, nombre=120, idTipoBebida=9, gradoAlcohol=10]
+16:45:59,659 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando bar: Los Amigos
+16:45:59,878 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando bar: Bar [id=11, nombre=Los Amigos, ciudad=Bogotá, presupuesto=Bajo, cantSedes=2]
+16:45:59,878 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando bebedor: Pepito
+16:45:59,909 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando bebedor: Bebedor [id=12, nombre=Pepito, ciudad=Bogotá, presupuesto=Alto]
+16:45:59,909 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando visitan [12, 11]
+16:45:59,924 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando visitan: Visitan [idBebedor=12, idBar=11, fechaVisita=2019-09-13 16:45:59.909, horario=diurno] tuplas insertadas
+16:45:59,924 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando visitan [12, 11]
+16:45:59,924 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando visitan: Visitan [idBebedor=12, idBar=11, fechaVisita=2019-09-13 16:45:59.924, horario=nocturno] tuplas insertadas
+16:45:59,924 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando visitan [12, 11]
+16:45:59,940 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando visitan: Visitan [idBebedor=12, idBar=11, fechaVisita=2019-09-13 16:45:59.924, horario=todos] tuplas insertadas
+16:45:59,940 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando gustan [12, 10]
+16:45:59,956 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando gustan: Gustan [idBebedor=12, idBebida=10] tuplas insertadas
+16:45:59,956 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Tipos de bebida
+16:45:59,971 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Tipos de bebida: 1 existentes
+16:45:59,971 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de las bebidas
+16:46:00,190 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de las bebidas: 1 existentes
+16:46:00,190 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Bares
+16:46:00,409 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Bares: 1 bares existentes
+16:46:00,409 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Bebedores
+16:46:00,409 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Bebedores: 1 bebedores existentes
+16:46:00,409 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Gustan
+16:46:00,424 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Gustan: 1 Gustan existentes
+16:46:00,424 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Visitan
+16:46:00,440 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Visitan: 3 Visitan existentes
+16:46:00,440 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Dar información COMPLETA de un bebedor por id: 12
+16:46:00,471 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Bebedor [id=12, nombre=Pepito, ciudad=Bogotá, presupuesto=Alto]
+16:46:00,471 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Eliminando gustan
+16:46:00,487 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Eliminando gustan: 1 tuplas eliminadas
+16:46:00,487 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Eliminando bebida por nombre: 120
+16:46:00,487 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Eliminando bebida por nombre: 1 tuplas eliminadas
+16:46:00,503 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Eliminando Tipo de bebida por nombre: Vino tinto
+16:46:00,518 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Eliminando Tipo de bebida por nombre: 1 tuplas eliminadas
+16:46:00,518 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Eliminando bebedor con sus visitas v1: 12
+16:46:00,534 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Eliminando bebedor con sus visitas v1: 1 bebedor y 3 visitas
+16:46:00,534 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Eliminando bar por nombre: Los Amigos
+16:46:00,549 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Eliminando bar: 1 tuplas eliminadas
+17:13:33,120 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se encontr� un archivo de configuraci�n v�lido: Interfaz
+17:13:33,121 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se aplica configuraci�n indicada en el archivo de configuraci�n
+17:13:33,133 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se encontr� un archivo de configuraci�n v�lido: Tablas BD
+17:14:38,722 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se encontr� un archivo de configuraci�n v�lido: Interfaz
+17:14:38,722 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se aplica configuraci�n indicada en el archivo de configuraci�n
+17:14:38,734 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se encontr� un archivo de configuraci�n v�lido: Tablas BD
+17:19:16,901 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se encontr� un archivo de configuraci�n v�lido: Interfaz
+17:19:16,901 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se aplica configuraci�n indicada en el archivo de configuraci�n
+17:19:16,913 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se encontr� un archivo de configuraci�n v�lido: Tablas BD
+17:28:07,513 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se encontr� un archivo de configuraci�n v�lido: Interfaz
+17:28:07,514 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se aplica configuraci�n indicada en el archivo de configuraci�n
+17:28:07,527 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se encontr� un archivo de configuraci�n v�lido: Tablas BD
+17:31:22,735 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se encontr� un archivo de configuraci�n v�lido: Interfaz
+17:31:22,736 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se aplica configuraci�n indicada en el archivo de configuraci�n
+17:31:22,748 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se encontr� un archivo de configuraci�n v�lido: Tablas BD
+17:32:20,971 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se encontr� un archivo de configuraci�n v�lido: Interfaz
+17:32:20,972 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se aplica configuraci�n indicada en el archivo de configuraci�n
+17:32:20,986 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se encontr� un archivo de configuraci�n v�lido: Tablas BD
+17:44:07,340 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se encontr� un archivo de configuraci�n v�lido: Interfaz
+17:44:07,340 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se aplica configuraci�n indicada en el archivo de configuraci�n
+17:44:07,352 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se encontr� un archivo de configuraci�n v�lido: Tablas BD
+18:40:25,740 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se encontr� un archivo de configuraci�n v�lido: Interfaz
+18:40:25,741 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se aplica configuraci�n indicada en el archivo de configuraci�n
+18:40:25,753 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se encontr� un archivo de configuraci�n v�lido: Tablas BD
+18:49:48,446 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se encontr� un archivo de configuraci�n v�lido: Interfaz
+18:49:48,447 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se aplica configuraci�n indicada en el archivo de configuraci�n
+18:49:48,459 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se encontr� un archivo de configuraci�n v�lido: Tablas BD
+18:51:07,308 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se encontr� un archivo de configuraci�n v�lido: Interfaz
+18:51:07,309 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se aplica configuraci�n indicada en el archivo de configuraci�n
+18:51:07,321 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se encontr� un archivo de configuraci�n v�lido: Tablas BD
+18:52:39,030 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se encontr� un archivo de configuraci�n v�lido: Interfaz
+18:52:39,031 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se aplica configuraci�n indicada en el archivo de configuraci�n
+18:52:39,042 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se encontr� un archivo de configuraci�n v�lido: Tablas BD
+18:56:56,736 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se encontr� un archivo de configuraci�n v�lido: Interfaz
+18:56:56,737 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se aplica configuraci�n indicada en el archivo de configuraci�n
+18:56:56,748 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se encontr� un archivo de configuraci�n v�lido: Tablas BD
+19:02:11,332 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se encontr� un archivo de configuraci�n v�lido: Interfaz
+19:02:11,332 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se aplica configuraci�n indicada en el archivo de configuraci�n
+19:02:11,344 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se encontr� un archivo de configuraci�n v�lido: Tablas BD
+19:02:45,239 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se encontr� un archivo de configuraci�n v�lido: Interfaz
+19:02:45,239 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se aplica configuraci�n indicada en el archivo de configuraci�n
+19:02:45,251 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se encontr� un archivo de configuraci�n v�lido: Tablas BD
+19:04:16,227 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se encontr� un archivo de configuraci�n v�lido: Interfaz
+19:04:16,228 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se aplica configuraci�n indicada en el archivo de configuraci�n
+19:04:16,240 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se encontr� un archivo de configuraci�n v�lido: Tablas BD
+19:07:30,916 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se encontr� un archivo de configuraci�n v�lido: Interfaz
+19:07:30,917 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se aplica configuraci�n indicada en el archivo de configuraci�n
+19:07:30,929 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se encontr� un archivo de configuraci�n v�lido: Tablas BD
+19:09:20,791 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se encontr� un archivo de configuraci�n v�lido: Interfaz
+19:09:20,792 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se aplica configuraci�n indicada en el archivo de configuraci�n
+19:09:20,804 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se encontr� un archivo de configuraci�n v�lido: Tablas BD
+19:12:11,995 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se encontr� un archivo de configuraci�n v�lido: Interfaz
+19:12:11,996 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se aplica configuraci�n indicada en el archivo de configuraci�n
+19:12:12,007 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se encontr� un archivo de configuraci�n v�lido: Tablas BD
+19:17:04,078 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se encontr� un archivo de configuraci�n v�lido: Interfaz
+19:17:04,078 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se aplica configuraci�n indicada en el archivo de configuraci�n
+19:17:04,090 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se encontr� un archivo de configuraci�n v�lido: Tablas BD
+19:18:25,684 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se encontr� un archivo de configuraci�n v�lido: Interfaz
+19:18:25,685 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se aplica configuraci�n indicada en el archivo de configuraci�n
+19:18:25,696 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se encontr� un archivo de configuraci�n v�lido: Tablas BD
+19:19:18,341 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se encontr� un archivo de configuraci�n v�lido: Interfaz
+19:19:18,341 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se aplica configuraci�n indicada en el archivo de configuraci�n
+19:19:18,353 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se encontr� un archivo de configuraci�n v�lido: Tablas BD
+19:31:24,498 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se encontr� un archivo de configuraci�n v�lido: Interfaz
+19:31:24,498 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se aplica configuraci�n indicada en el archivo de configuraci�n
+19:31:24,509 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se encontr� un archivo de configuraci�n v�lido: Tablas BD
+19:44:32,504 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se encontr� un archivo de configuraci�n v�lido: Interfaz
+19:44:32,504 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se aplica configuraci�n indicada en el archivo de configuraci�n
+19:44:32,516 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazEpsAndesApp] - Se encontr� un archivo de configuraci�n v�lido: Tablas BD
+20:05:32,870 (main) INFO  [uniandes.isis2304.epsandes.interfazApp.InterfazEpsAndesApp] - Se encontr� un archivo de configuraci�n v�lido: Interfaz
+20:05:32,870 (main) INFO  [uniandes.isis2304.epsandes.interfazApp.InterfazEpsAndesApp] - Se aplica configuraci�n indicada en el archivo de configuraci�n
+20:05:32,882 (main) INFO  [uniandes.isis2304.epsandes.interfazApp.InterfazEpsAndesApp] - Se encontr� un archivo de configuraci�n v�lido: Tablas BD
+20:05:41,164 (AWT-EventQueue-0) INFO  [uniandes.isis2304.epsandes.negocio.EPSAndes] - Registrando eps: epsjaime
+20:05:41,258 (AWT-EventQueue-0) ERROR [uniandes.isis2304.epsandes.negocio.EPSAndes] - Exception : SQL query "INSERT INTO A_EPS(id, nombre) values (?, ?)" requires 2 parameters yet none have been supplied
+
+20:05:41,260 (AWT-EventQueue-0) INFO  [uniandes.isis2304.epsandes.negocio.EPSAndes] - EPS registrada: epsjaime
