@@ -1183,7 +1183,7 @@ public class PersistenciaEPSAndes {
 			Object [] datos = (Object []) tupla;
 			int idIPS = ((BigDecimal) datos [0]).intValue ();
 			String nombreIPS = (String) datos [1];
-			int cantidadServiciosPrestados = ((BigDecimal) datos [0]).intValue ();
+			int cantidadServiciosPrestados = ((BigDecimal) datos [3]).intValue ();
 			
 			Object [] servicio = new Object [3];
 			servicio [0] = idIPS;
@@ -1959,8 +1959,50 @@ public class PersistenciaEPSAndes {
 		}
 	}
 	
-	
+	//------------------------------------------------------------------------------------------------------------------
+	//------------------------------------------------------------------------------------------------------------------
 	//Metodos IT3
+	//------------------------------------------------------------------------------------------------------------------
+	//------------------------------------------------------------------------------------------------------------------
+	
+	public List<Object []> rfc9 (String fechaInicio, String fechaFin, String nombreIPS, String asendente, String numeroconsultas, String servicioSalud)
+	{
+		List<Object []> respuesta = new LinkedList <Object []> ();
+		List<Object[]> tuplas = sqlUsuarioIPS.RFC9(pmf.getPersistenceManager(), fechaInicio, fechaFin, nombreIPS, asendente, numeroconsultas, servicioSalud);
+        for ( Object[] tupla : tuplas)
+        {
+        	
+        	
+			Object [] datos = (Object []) tupla;
+			int numDoumento = ((BigDecimal) datos [0]).intValue ();
+			String nombre = (String) datos [1];
+			int numeroConsultas = ((BigDecimal) datos [2]).intValue ();
+			String estado = (String) datos [3];
+			String fechaNacimiento = (String) datos [4];
+			String esAfiliado = (String) datos [5];
+			String correo = (String) datos [6];
+			String genero = (String) datos [7];
+			int edad = ((BigDecimal) datos [8]).intValue ();
+		
+			
+			
+			Object [] servicio = new Object [9];
+			servicio [0] = numDoumento;
+			servicio [1] = nombre;
+			servicio [2] = numeroConsultas;
+			servicio [3] = estado;
+			servicio [4] = fechaNacimiento;
+			servicio [5] = esAfiliado;
+			servicio [6] = correo;
+			servicio [7] = genero;
+			servicio [8] = edad;		
+			respuesta.add(servicio);
+        }
+        
+
+		return respuesta;
+	}
+
 	
 	public String consultarFuncionamiento(String semana) {
 		

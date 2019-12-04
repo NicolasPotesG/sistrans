@@ -107,6 +107,13 @@ public class EPSAndes {
 		log.info ("Listando afiliados exigentes: Listo!");
 		return tuplas;
 	}
+	
+	public  List<Object []> rfc9(String fechaInicio, String fechaFin,String nombreIPS,String asendente,String numeroconsultas,String servicioSalud) {
+		log.info ("Listando ");
+		List<Object []> tuplas = pp.rfc9(fechaInicio, fechaFin, nombreIPS, asendente, numeroconsultas, servicioSalud);
+		log.info ("Listando!");
+		return tuplas;
+	}
 
 	/**
 	 * El constructor qye recibe los nombres de las tablas en tableConfig
