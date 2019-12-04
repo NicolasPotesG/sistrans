@@ -115,6 +115,15 @@ public class EPSAndes {
 		return tuplas;
 	}
 
+	
+	public  List<Object []> rfc10(String fechaInicio, String fechaFin,String nombreIPS,String asendente,String numeroconsultas,String servicioSalud) {
+		log.info ("Listando ");
+		List<Object []> tuplas = pp.rfc10(fechaInicio, fechaFin, nombreIPS, asendente, numeroconsultas, servicioSalud);
+		log.info ("Listando!");
+		return tuplas;
+	}
+
+	
 	/**
 	 * El constructor qye recibe los nombres de las tablas en tableConfig
 	 * @param tableConfig - Objeto Json con los nombres de las tablas y de la unidad de persistencia

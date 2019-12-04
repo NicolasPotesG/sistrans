@@ -199,3 +199,15 @@ ORA-00903: invalid table name
 17:33:11,863 (AWT-EventQueue-0) INFO  [uniandes.isis2304.epsandes.negocio.EPSAndes] - Listando 
 17:33:14,751 (AWT-EventQueue-0) INFO  [uniandes.isis2304.epsandes.negocio.EPSAndes] - Listando!
 >>>>>>> 21d88798f8e9e4dfca3fbe1b9d0cf96788aebf50
+18:31:08,833 (main) INFO  [uniandes.isis2304.epsandes.interfazApp.InterfazEpsAndesApp] - Se encontr� un archivo de configuraci�n v�lido: Interfaz
+18:31:08,833 (main) INFO  [uniandes.isis2304.epsandes.interfazApp.InterfazEpsAndesApp] - Se aplica configuraci�n indicada en el archivo de configuraci�n
+18:31:52,789 (AWT-EventQueue-0) INFO  [uniandes.isis2304.epsandes.negocio.EPSAndes] - Obteniendo tipo de servicio mas consumido de la semana: 1/1/2019
+18:32:04,276 (AWT-EventQueue-0) INFO  [uniandes.isis2304.epsandes.negocio.EPSAndes] - Obteniendo afiliados costosos
+18:32:59,406 (main) INFO  [uniandes.isis2304.epsandes.interfazApp.InterfazEpsAndesApp] - Se encontr� un archivo de configuraci�n v�lido: Interfaz
+18:32:59,407 (main) INFO  [uniandes.isis2304.epsandes.interfazApp.InterfazEpsAndesApp] - Se aplica configuraci�n indicada en el archivo de configuraci�n
+18:33:14,049 (AWT-EventQueue-0) INFO  [uniandes.isis2304.epsandes.negocio.EPSAndes] - Listando 
+18:33:24,814 (AWT-EventQueue-0) INFO  [uniandes.isis2304.epsandes.negocio.EPSAndes] - Listando!
+18:34:01,819 (main) INFO  [uniandes.isis2304.epsandes.interfazApp.InterfazEpsAndesApp] - Se encontr� un archivo de configuraci�n v�lido: Interfaz
+18:34:01,820 (main) INFO  [uniandes.isis2304.epsandes.interfazApp.InterfazEpsAndesApp] - Se aplica configuraci�n indicada en el archivo de configuraci�n
+18:34:13,016 (AWT-EventQueue-0) INFO  [uniandes.isis2304.epsandes.negocio.EPSAndes] - Listando 
+18:34:23,243 (AWT-EventQueue-0) INFO  [uniandes.isis2304.epsandes.negocio.EPSAndes] - Listando!

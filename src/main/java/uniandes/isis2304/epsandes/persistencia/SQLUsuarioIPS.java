@@ -170,4 +170,35 @@ class SQLUsuarioIPS
 	}
 	
 	
+	public List<Object[]> RFC10(PersistenceManager pm, String fechaInicio, String fechaFin, String nombreIPS, String asendente, String numeroconsultas, String servicioSalud){
+		
+		String tipoServicio = "";
+		if(fechaInicio.equals("")){
+			fechaInicio = "2/10/2017";
+			fechaFin= "11/1/2021";
+		}
+		if(!servicioSalud.equals("")){
+			String procedimiento = servicioSalud.replace("_", "");
+			tipoServicio = "INNER JOIN "+servicioSalud+" ON CITA.id"+procedimiento+ " = "+servicioSalud+".id";
+			
+		}
+		String sql = " SELECT USUARIO_IPS.numdocumento, USUARIO_IPS.nombre , x.numero"+servicioSalud+",  USUARIO_IPS.estado, ";
+		sql +="               USUARIO_IPS.fechaNacimiento, USUARIO_IPS.esAfiliado,  USUARIO_IPS.correo, USUARIO_IPS.genero, USUARIO_IPS.edad " ;
+		sql +="        FROM( ";
+		sql +="                select usuario_ips.numdocumento, usuario_ips.nombre, count(usuario_ips.numdocumento)  numero"+servicioSalud;
+		sql +="                FROM USUARIO_IPS INNER JOIN CITA ON USUARIO_IPS.numdocumento = CITA.idUSUARIOIPS ";
+		sql +="                INNER JOIN RECETA ON CITA.ID = RECETA.idCita ";
+		sql += tipoServicio;
+		sql +="                WHERE TO_DATE(cita.fechaInicio, 'MM-DD-YYYY')>= TO_DATE('"+fechaInicio+"','MM-DD-YYYY') ";
+		sql +="                      AND TO_DATE(cita.fechaFin, 'MM-DD-YYYY')<= TO_DATE('"+fechaFin+"','MM-DD-YYYY') ";
+		sql +="                GROUP BY (usuario_ips.numdocumento, usuario_ips.nombre  ) )x ";
+		
+		sql +="        INNER JOIN USUARIO_IPS ON X.numdocumento = USUARIO_IPS.numdocumento ";
+		
+	    Query q = pm.newQuery(SQL, sql);
+		List<Object[]> lista = q.executeList(); 	
+			return lista;
+	}
+	
+	
 }
