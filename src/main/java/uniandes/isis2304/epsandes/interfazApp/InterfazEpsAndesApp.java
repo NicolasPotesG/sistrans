@@ -452,6 +452,89 @@ public class InterfazEpsAndesApp extends JFrame implements ActionListener {
 		return resp;
 	}
 
+	/**
+	 * Los servicios que fueron más solicitados en un período de tiempo dado.
+	 */
+	public void rfc9() {
+
+		try {
+			String fechaInicio = JOptionPane.showInputDialog("Dar fecha inicio (MM-DD-YYYY). Oprima haceptar si no desea rangos de fechas");
+			String fechaFin = "";
+			if(fechaInicio.equals("")){
+				fechaFin = JOptionPane.showInputDialog("Dar fecha fin (YYYY-MM-DD)");
+			}
+			String nombreIPS = JOptionPane.showInputDialog("Dar el nombre de la IPS a la aque pertenece el afiliado. Oprima haceptar si no desea buscar por IPS");
+			String numeroconsultas = "";
+			numeroconsultas = JOptionPane.showInputDialog("Dar el numero de consultas minimo.  Oprima haceptar si no quierre un numero minimo");
+			if(numeroconsultas.equals("")){
+				numeroconsultas = "0";
+			}
+			String ascendente = "ASC";
+			ascendente = JOptionPane.showInputDialog("Dar el nombre de la IPS a la aque pertenece el afiliado. Por defecta es ascendente");
+			String servicioSalud = "";
+			servicioSalud = JOptionPane.showInputDialog("Dar el servicio de salud. /n 1 para consultas n/ 2 para procedimientos especiales /n 3 para hospitalizaciones /n 4 para terapias");
+			if(servicioSalud.equals("1")){
+				servicioSalud = "consulta";
+			}
+			if(servicioSalud.equals("2")){
+				servicioSalud = "procedimientos_esp";
+			}
+			if(servicioSalud.equals("3")){
+				servicioSalud = "hospitalizacion";
+			}
+			if(servicioSalud.equals("4")){
+				servicioSalud = "terapia";
+			}
+			
+				List<Object[]> servicios = epsandes.rfc9(fechaInicio, fechaFin, nombreIPS, ascendente, numeroconsultas, servicioSalud);
+				String resp = listarRCF9(servicios, servicioSalud);
+				panelDatos.actualizarInterfaz(resp);
+			
+		}
+
+		catch (Exception e) 
+		{
+			//			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+	}
+	
+	private String listarRCF9 (List<Object[]> lista, String servicioSalud) 
+	{
+		String resp = "Los servicios que fueron mas solictados son:\n";
+		String resp1 = "";
+		for (int i = 0; i < 1000; i++ )
+		{
+			Object[] tupla = lista.get(i);
+
+				resp1 +="Numero documento: " +tupla[0] + ", ";	
+				
+	
+				resp1 +="Nombre: " +tupla[1] + ", ";	
+		
+				resp1 +="Numero "+servicioSalud+": " +tupla[2] + ", ";	
+		
+				resp1 +="Estado: " +tupla[3] + ", ";	
+	
+				resp1 +="Fecha Nacimiento: " +tupla[4] + ", ";	
+		
+				resp1 +="Es Afiliado: " +tupla[5] + ", ";	
+				
+		
+				resp1 +="Correo: " +tupla[6] + ", ";	
+		
+				resp1 +="Genero: " +tupla[7] + ", ";	
+		
+				resp1 +="Edad: " +tupla[8] + ", ";	
+				
+		
+	
+			
+			resp += resp1 + "\n";
+		}
+		return resp;
+	}
 
 	/* ****************************************************************
 	 * 			CRUD de EPS
