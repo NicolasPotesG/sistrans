@@ -1962,7 +1962,7 @@ public class PersistenciaEPSAndes {
 	
 	//Metodos IT3
 	
-	public String darTipoServicioMasConsumido(String semana) {
+	public String consultarFuncionamiento(String semana) {
 		
 		PersistenceManager pm = pmf.getPersistenceManager();
 		
@@ -1991,6 +1991,45 @@ public class PersistenciaEPSAndes {
 			tx.commit();
 			
 			log.trace ("Obtenido tipo de servicio mas consumido: ");
+			
+		}
+		catch (Exception e)
+		{
+			//        	e.printStackTrace();
+			log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+		}
+		finally
+		{
+			if (tx.isActive())
+			{
+				tx.rollback();
+			}
+			pm.close();
+		}
+		
+		return resultado;
+		
+	}
+	
+	
+	public String consultarAfiliadosCostosos() {
+		
+		PersistenceManager pm = pmf.getPersistenceManager();
+		
+		//Se convierte el String a Date
+		Transaction tx=pm.currentTransaction();
+		
+		String resultado = "";
+		
+		try
+		{
+			tx.begin();
+
+			resultado = sqlCita.reqC12(pm);
+			
+			tx.commit();
+			
+			log.trace ("Obtenido: afiliados mas costosos");
 			
 		}
 		catch (Exception e)

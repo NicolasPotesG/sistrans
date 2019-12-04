@@ -1859,6 +1859,23 @@ public class InterfazEpsAndesApp extends JFrame implements ActionListener {
 		}
 		
 	}
+	
+	
+	
+	//REQFC#12
+	
+	public void consultarAfiliadosCostosos() {
+		
+		JOptionPane.showMessageDialog(this, "Se muestra reporte de los afiliados costosos segun tres criterios (cantidad por mes, servicios especiales, hospitalizaciones)");
+		
+		
+		String resultado = epsandes.consultarAfiliadosCostosos();
+		
+		panelDatos.actualizarInterfaz(resultado);
+		
+		
+		
+	}
 
 
 	/* ****************************************************************

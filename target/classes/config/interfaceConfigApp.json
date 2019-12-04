@@ -186,6 +186,10 @@
 				{
 					"label": "Consultar funcionamiento",
 					"event": "consultarFuncionamiento"
+				},
+				{
+					"label": "Consultar afiliados costosos",
+					"event": "consultarAfiliadosCostosos"
 				}
 			]
 		},

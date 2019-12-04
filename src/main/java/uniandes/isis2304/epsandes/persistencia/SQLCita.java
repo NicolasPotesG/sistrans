@@ -332,8 +332,9 @@ class SQLCita
 
 	//Metodos it3
 
+	//REQFC#11
 	public String reqC11(PersistenceManager pm, String semana, String semana2) {
-		
+
 		String respuestaReq = "Reporte semanal entre: " + semana + " y " + semana2 +" \n\n";
 
 
@@ -358,8 +359,12 @@ class SQLCita
 		int idMax = 0;
 		int idMin = 0;
 
+		String isNull = "";
 
 		for(int i = 0; i < 4; i++) {
+
+
+			isNull = "";
 
 			//Sentencia ss mas usado
 			String sql = 
@@ -375,219 +380,244 @@ class SQLCita
 			Query q1 = pm.newQuery(SQL, sql);
 			List<Object[]> lista1 = q1.executeList();
 
-			Object[] objSSMax = (Object[]) lista1.get(0);
-			Object[] objSSMin = (Object[]) lista1.get(lista1.size()-2);
-
-			BigDecimal x = ((BigDecimal) objSSMax[1]);
-			BigDecimal y = ((BigDecimal) objSSMin[1]);
-
-			BigDecimal x1 = ((BigDecimal) objSSMax[0]);
-			BigDecimal y1 = ((BigDecimal) objSSMin[0]);
+			if(lista1.size() == 0) {
 
 
-
-			if(x.intValue() > max) {
-
-				ssMax = arrayTipoSS[i].substring(2, arrayTipoSS[i].length());
-				idMax = x1.intValue();
-				max = x.intValue();
+				isNull =  "Y";
 
 			}
 
-			if(y.intValue()  < min) {
 
-				ssMin = arrayTipoSS[i].substring(2, arrayTipoSS[i].length());
-				idMin = y1.intValue();
-				min = y.intValue();
+			if(!isNull.equals("Y")) {
+
+
+				Object[] objSSMax = (Object[]) lista1.get(0);
+				Object[] objSSMin = (Object[]) lista1.get(lista1.size()-2);
+
+				BigDecimal x = ((BigDecimal) objSSMax[1]);
+				BigDecimal y = ((BigDecimal) objSSMin[1]);
+
+				BigDecimal x1 = ((BigDecimal) objSSMax[0]);
+				BigDecimal y1 = ((BigDecimal) objSSMin[0]);
+
+
+
+				if(x.intValue() > max) {
+
+					ssMax = arrayTipoSS[i].substring(2, arrayTipoSS[i].length());
+					idMax = x1.intValue();
+					max = x.intValue();
+
+				}
+
+				if(y.intValue()  < min) {
+
+					ssMin = arrayTipoSS[i].substring(2, arrayTipoSS[i].length());
+					idMin = y1.intValue();
+					min = y.intValue();
+
+				}
+
+				//Query para tipo de ss mas y menos usado
+				String sql2 =	
+						"select count(*) ";
+				sql2+="from cita ";
+				sql2+="where " +arrayTipoSS[i] + " >=  1 ";
+				sql2+= "and fechainicio between ' "+ semana +" ' and " + " ' " + semana2 + " ' ";
+				sql2+= "and fechafin between ' "+ semana +" ' and " + " ' " + semana2 + " ' ";
+
+				//se ejecuta el query por cada ss
+				Query q2 = pm.newQuery(SQL, sql2);
+				List<BigDecimal> lista2 = q2.executeList();
+				BigDecimal resultTipo = (BigDecimal) lista2.get(0);
+
+
+				if(resultTipo.intValue() > max2) {
+
+					max2 = resultTipo.intValue();
+					ssMax2 = arrayTipoSS[i];
+
+				}
+
+				if(resultTipo.intValue() < min2) {
+
+					min2 = resultTipo.intValue();
+					ssMin2 = arrayTipoSS[i];
+
+				}
 
 			}
 
-			//Query para tipo de ss mas y menos usado
-			String sql2 =	
-					"select count(*) ";
-			sql2+="from cita ";
-			sql2+="where " +arrayTipoSS[i] + " >=  1 ";
-			sql2+= "and fechainicio between ' "+ semana +" ' and " + " ' " + semana2 + " ' ";
-			sql2+= "and fechafin between ' "+ semana +" ' and " + " ' " + semana2 + " ' ";
-
-			//se ejecuta el query por cada ss
-			Query q2 = pm.newQuery(SQL, sql2);
-			List<BigDecimal> lista2 = q2.executeList();
-			BigDecimal resultTipo = (BigDecimal) lista2.get(0);
-
-
-			if(resultTipo.intValue() > max2) {
-
-				max2 = resultTipo.intValue();
-				ssMax2 = arrayTipoSS[i];
-
-			}
-
-			if(resultTipo.intValue() < min2) {
-
-				min2 = resultTipo.intValue();
-				ssMin2 = arrayTipoSS[i];
-
-			}
 
 		}
 
+		if(!isNull.equals("Y")) {
 
-		String r = "";
-		//System.out.println("Servicio de salud mas usado:");
-		
-		respuestaReq += "Servicio de salud mas usado:"+ "\n";
 
-		//Query para obtener el ss de salud mas usado
-		Query qSSMax = pm.newQuery(SQL, "select * from " + ssMax + " where id = " + idMax);
-		List<Object[]> listSSMax = qSSMax.executeList();
-		Object[] objectSSMax = listSSMax.get(0);
+			String r = "";
+			//System.out.println("Servicio de salud mas usado:");
 
-		if(ssMax.equals("terapia")) {
+			respuestaReq += "Servicio de salud mas usado:"+ "\n";
 
-			r += "Terapia: " + objectSSMax[4] + " con id: " + idMax + " con una intensidad de: " + max;
+			//Query para obtener el ss de salud mas usado
+			Query qSSMax = pm.newQuery(SQL, "select * from " + ssMax + " where id = " + idMax);
+			List<Object[]> listSSMax = qSSMax.executeList();
+			Object[] objectSSMax = listSSMax.get(0);
 
-		} else if(ssMax.equals("procedimientoesp")) {
+			if(ssMax.equals("terapia")) {
 
-			r += "Procedimiento especial con conocimiento en: " + objectSSMax[3] + " con id: " + idMax + " con una intensidad de: " + max;
+				r += "Terapia: " + objectSSMax[4] + " con id: " + idMax + " con una intensidad de: " + max;
 
-		} else if(ssMax.equals("consulta")) {
+			} else if(ssMax.equals("procedimientoesp")) {
 
-			r += "Consulta" + objectSSMax[0] + " con id: " + idMax + " con una intensidad de: " + max;
+				r += "Procedimiento especial con conocimiento en: " + objectSSMax[3] + " con id: " + idMax + " con una intensidad de: " + max;
+
+			} else if(ssMax.equals("consulta")) {
+
+				r += "Consulta" + objectSSMax[0] + " con id: " + idMax + " con una intensidad de: " + max;
+
+			}
+
+			//System.out.println(r);
+
+			respuestaReq += r + "\n";
+
+			r = "";
+
+			//System.out.println("Servicio de salud menos usado:");
+
+			respuestaReq += "Servicio de salud menos usado:" + "\n";
+
+			//Query para obtener el ss de salud menos usado
+			Query qSSMin = pm.newQuery(SQL, "select * from " + ssMin + " where id = " + idMin);
+			qSSMin.setParameters(ssMin, idMin);
+			Object[] objectSSMin = listSSMax.get(0);
+
+			if(ssMax.equals("terapia")) {
+
+				r += "Terapia: " + objectSSMin[4] + " con id: " + idMin + " con una intensidad de: " + min;
+
+			} else if(ssMax.equals("procedimientoesp")) {
+
+				r += "Procedimiento especial con conocimiento en: " + objectSSMin[3] + " con id: " + idMin + " con una intensidad de: " + min;
+
+			} else if(ssMax.equals("consulta")) {
+
+				r += "Consulta" + objectSSMin[0] + " con id: " + idMin + " con una intensidad de: " + min;
+
+			}
+
+			//System.out.println(r);
+
+			respuestaReq += r + "\n" + "\n";
+
+			//System.out.println();
+
+			//Tipo de servicio mas usado
+			//System.out.println("Tipo de servicio mas usado: " + ssMax2.substring(2,ssMax2.length()));
+			respuestaReq += "Tipo de servicio mas usado: " + ssMax2.substring(2,ssMax2.length()) +"\n";
+
+			//Tipo de servicio menos usado
+			//System.out.println("Tipo de servicio menos usado: " + ssMin2.substring(2,ssMin2.length()));
+			respuestaReq += "Tipo de servicio menos usado: " + ssMin2.substring(2,ssMin2.length()) +"\n"+ "\n";
+
+
+			//System.out.println();
+
+			//IPS mas y menos usada
+			String sql3 = 
+					"select t." +  "idips" + ", t.total ";
+			sql3 += "from (SELECT " + "idips" + ", COUNT( "+ "idips" +" ) AS total ";
+			sql3 += "FROM  cita ";
+			sql3	+= "where fechainicio between ' "+ semana +" ' and " + " ' " + semana2 + " ' ";
+			sql3	+= "and fechafin between ' "+ semana +" ' and" + " ' " + semana2 + " ' ";
+			sql3 += "GROUP BY " + "idips";
+			sql3 += " ORDER BY total DESC)t ";
+
+			Query q3 = pm.newQuery(SQL, sql3);
+			List<Object[]> lista3 = q3.executeList();
+
+			Object[] objIPSMax = (Object[]) lista3.get(0);
+			Object[] objIPSMin = (Object[]) lista3.get(lista3.size()-1);
+
+			//Mas usada
+			String sql4 =
+					"select nombre ";
+			sql4+="from ips ";
+			sql4+="where id = " + objIPSMax[0];
+
+			Query q4 = pm.newQuery(SQL, sql4);
+			List<String> lista4 = q4.executeList();
+			String nombreIPSMax = (String) lista4.get(0);
+
+			//System.out.println("La IPS mas usada es: " + nombreIPSMax + " con id: " + objIPSMax[0] + " con cantidad de: " + objIPSMax[1]);
+			respuestaReq += "La IPS mas usada es: " + nombreIPSMax + " con id: " + objIPSMax[0] + " con cantidad de: " + objIPSMax[1] + "\n";
+
+			//Mas usada
+			String sql5 =
+					"select nombre ";
+			sql5+="from ips ";
+			sql5+="where id = " + objIPSMin[0];
+
+			Query q5 = pm.newQuery(SQL, sql5);
+			List<String> lista5 = q5.executeList();
+			String nombreIPSMin = (String) lista5.get(0);
+
+			//System.out.println("La IPS menos usada es: " + nombreIPSMin + " con id: " + objIPSMin[0] + " con cantidad de: " + objIPSMin[1]);
+			respuestaReq += "La IPS menos usada es: " + nombreIPSMin + " con id: " + objIPSMin[0] + " con cantidad de: " + objIPSMin[1] + "\n" + "\n";
+
+			//Afiliado que mas ha solicitado citas
+			List<Object[]> lista6 = darUsuarioCitas(semana, semana2, "DESC", pm);
+			Object[] usuarioIPS = (Object[]) lista6.get(0);
+
+			BigDecimal idUsuario = (BigDecimal) usuarioIPS[0];
+			BigDecimal cantCitasUsuario = (BigDecimal) usuarioIPS[1];
+
+			//Se obtiene el nombre del usuario 
+			String sql7 = 
+					"select nombre ";
+			sql7 += "from usuario_ips ";
+			sql7 += "where numdocumento = " + idUsuario.intValue();
+
+			Query q7 = pm.newQuery(SQL, sql7);
+			List<String> lista7 = q7.executeList();
+			String nombreUsuario = (String) lista7.get(0);
+
+			//System.out.println();
+
+			//System.out.println("El usuario con mas solicitudes de citas de ss es: " + nombreUsuario +" con id: " + idUsuario + " con " + cantCitasUsuario.intValue() + " citas pedidas");
+			respuestaReq += "El usuario con mas solicitudes de citas de ss es: " + nombreUsuario +" con id: " + idUsuario + " con " + cantCitasUsuario.intValue() + " citas pedidas" + "\n";
+
+			//Cantidad de afiliados que no han solicitado citas
+
+			String sql8 =
+					"select count(*) from( ";
+			sql8+="select t.idusuarioips, t.total ";
+			sql8+= "from (SELECT idusuarioips, COUNT( idusuarioips ) AS total ";
+			sql8+="FROM  cita ";
+			sql8	+= "where fechainicio between ' "+ semana +" ' and " + " ' " + semana2 + " ' ";
+			sql8	+= "and fechafin between ' "+ semana +" ' and" + " ' " + semana2 + " ' ";
+			sql8+="GROUP BY idusuarioips)t) ";
+
+			Query q8 = pm.newQuery(SQL, sql8);
+			List<BigDecimal> lista8 = q8.executeList();
+			BigDecimal total = (BigDecimal) lista8.get(0);
+
+			//System.out.println("La cantidad de usuarios de ips que no pidieron citas fue de: " + lista8.size());
+			respuestaReq += "La cantidad de usuarios de ips que no pidieron citas fue de: " + (60000 - total.intValue());
+
 
 		}
 
-		//System.out.println(r);
-		
-		respuestaReq += r + "\n";
+		else {
 
-		r = "";
-
-		//System.out.println("Servicio de salud menos usado:");
-		
-		respuestaReq += "Servicio de salud menos usado:" + "\n";
-
-		//Query para obtener el ss de salud menos usado
-		Query qSSMin = pm.newQuery(SQL, "select * from " + ssMin + " where id = " + idMin);
-		qSSMin.setParameters(ssMin, idMin);
-		Object[] objectSSMin = listSSMax.get(0);
-
-		if(ssMax.equals("terapia")) {
-
-			r += "Terapia: " + objectSSMin[4] + " con id: " + idMin + " con una intensidad de: " + min;
-
-		} else if(ssMax.equals("procedimientoesp")) {
-
-			r += "Procedimiento especial con conocimiento en: " + objectSSMin[3] + " con id: " + idMin + " con una intensidad de: " + min;
-
-		} else if(ssMax.equals("consulta")) {
-
-			r += "Consulta" + objectSSMin[0] + " con id: " + idMin + " con una intensidad de: " + min;
+			respuestaReq = "No hay servicios en el rango";
 
 		}
 
-		//System.out.println(r);
-		
-		respuestaReq += r + "\n" + "\n";
-
-		//System.out.println();
-
-		//Tipo de servicio mas usado
-		//System.out.println("Tipo de servicio mas usado: " + ssMax2.substring(2,ssMax2.length()));
-		respuestaReq += "Tipo de servicio mas usado: " + ssMax2.substring(2,ssMax2.length()) +"\n";
-
-		//Tipo de servicio menos usado
-		//System.out.println("Tipo de servicio menos usado: " + ssMin2.substring(2,ssMin2.length()));
-		respuestaReq += "Tipo de servicio menos usado: " + ssMin2.substring(2,ssMin2.length()) +"\n"+ "\n";
-
-
-		//System.out.println();
-
-		//IPS mas y menos usada
-		String sql3 = 
-				"select t." +  "idips" + ", t.total ";
-		sql3 += "from (SELECT " + "idips" + ", COUNT( "+ "idips" +" ) AS total ";
-		sql3 += "FROM  cita ";
-		sql3	+= "where fechainicio between ' "+ semana +" ' and " + " ' " + semana2 + " ' ";
-		sql3	+= "and fechafin between ' "+ semana +" ' and" + " ' " + semana2 + " ' ";
-		sql3 += "GROUP BY " + "idips";
-		sql3 += " ORDER BY total DESC)t ";
-
-		Query q3 = pm.newQuery(SQL, sql3);
-		List<Object[]> lista3 = q3.executeList();
-
-		Object[] objIPSMax = (Object[]) lista3.get(0);
-		Object[] objIPSMin = (Object[]) lista3.get(lista3.size()-1);
-
-		//Mas usada
-		String sql4 =
-				"select nombre ";
-		sql4+="from ips ";
-		sql4+="where id = " + objIPSMax[0];
-
-		Query q4 = pm.newQuery(SQL, sql4);
-		List<String> lista4 = q4.executeList();
-		String nombreIPSMax = (String) lista4.get(0);
-
-		//System.out.println("La IPS mas usada es: " + nombreIPSMax + " con id: " + objIPSMax[0] + " con cantidad de: " + objIPSMax[1]);
-		respuestaReq += "La IPS mas usada es: " + nombreIPSMax + " con id: " + objIPSMax[0] + " con cantidad de: " + objIPSMax[1] + "\n";
-
-		//Mas usada
-		String sql5 =
-				"select nombre ";
-		sql5+="from ips ";
-		sql5+="where id = " + objIPSMin[0];
-
-		Query q5 = pm.newQuery(SQL, sql5);
-		List<String> lista5 = q5.executeList();
-		String nombreIPSMin = (String) lista5.get(0);
-
-		//System.out.println("La IPS menos usada es: " + nombreIPSMin + " con id: " + objIPSMin[0] + " con cantidad de: " + objIPSMin[1]);
-		respuestaReq += "La IPS menos usada es: " + nombreIPSMin + " con id: " + objIPSMin[0] + " con cantidad de: " + objIPSMin[1] + "\n" + "\n";
-		
-		//Afiliado que mas ha solicitado citas
-		List<Object[]> lista6 = darUsuarioCitas(semana, semana2, "DESC", pm);
-		Object[] usuarioIPS = (Object[]) lista6.get(0);
-
-		BigDecimal idUsuario = (BigDecimal) usuarioIPS[0];
-		BigDecimal cantCitasUsuario = (BigDecimal) usuarioIPS[1];
-
-		//Se obtiene el nombre del usuario 
-		String sql7 = 
-				"select nombre ";
-		sql7 += "from usuario_ips ";
-		sql7 += "where numdocumento = " + idUsuario.intValue();
-
-		Query q7 = pm.newQuery(SQL, sql7);
-		List<String> lista7 = q7.executeList();
-		String nombreUsuario = (String) lista7.get(0);
-
-		//System.out.println();
-
-		//System.out.println("El usuario con mas solicitudes de citas de ss es: " + nombreUsuario +" con id: " + idUsuario + " con " + cantCitasUsuario.intValue() + " citas pedidas");
-		respuestaReq += "El usuario con mas solicitudes de citas de ss es: " + nombreUsuario +" con id: " + idUsuario + " con " + cantCitasUsuario.intValue() + " citas pedidas" + "\n";
-
-		//Cantidad de afiliados que no han solicitado citas
-	
-	String sql8 =
-		"select t.idusuarioips, t.total ";
-		sql8+= "from (SELECT idusuarioips, COUNT( idusuarioips ) AS total ";
-		sql8+="FROM  cita ";
-		sql8+="where fechainicio between ' 1/1/2019 ' and ' 1/8/2019 ' ";
-		sql8+="and fechafin between ' 1/1/2019 ' and ' 1/8/2019 ' ";
-		sql8+="GROUP BY idusuarioips)t ";
-		sql8+="where t.total = 0 ";
-		
-		Query q8 = pm.newQuery(SQL, sql8);
-		List<Object[]> lista8 = q8.executeList();
-		
-		//System.out.println("La cantidad de usuarios de ips que no pidieron citas fue de: " + lista8.size());
-		respuestaReq += "La cantidad de usuarios de ips que no pidieron citas fue de: " + lista8.size();
-		
 		return (respuestaReq);
+
 	}
-
-
 
 	public List<Object[]> darUsuarioCitas(String semana, String semana2, String orden, PersistenceManager pm) {
 
@@ -607,5 +637,96 @@ class SQLCita
 		return lista6;
 	}
 
+
+	//REQFC#12
+
+	public String reqC12(PersistenceManager pm) {
+		
+		String result = "";
+
+		//usuarios mes
+		String sql = 
+				"select usuario_ips.*, x.contador AS nummeses ";
+		sql+="from (select t.contUsuario AS idUsuario, count(t.contUsuario) AS contador ";
+		sql += " from (";
+		sql+=" select to_char(to_date(fechainicio,'MM/DD/YYYY'),'MM') AS mes, idusuarioips AS contUsuario, count(idusuarioips) ";
+		sql+="from cita ";
+		sql+="group by to_char(to_date(fechainicio,'MM/DD/YYYY'),'MM'), idusuarioips ";
+		sql+=")t ";
+		sql+="group by t.contUsuario)x, usuario_ips ";
+		sql +="where x.contador > 11 ";
+		sql+="and x.idUsuario = usuario_ips.numdocumento ";
+
+
+		Query q = pm.newQuery(SQL, sql);
+		List<Object[]> listaMes = q.executeList();
+
+		result += ("LOS AFILIADOS QUE SOLICITAN SERVICIOS DE SALUD AL MENOS UNA VEZ AL MES SON: \n\n");
+
+		for(Object[] actual: listaMes) {
+
+			result += ("Nombre: " + actual[0] + " con numero de documento: " + actual[2] + ". Los meses en los que han pedido servicios de salud son: " + actual[10] + "\n");   
+
+		}
+
+		result += "\n\n";
+
+		//usuarios procedimiento esp
+
+		String sql2 = "select usuario_ips.*, t2.p as cantidadprocedimientos ";
+		sql2+="from(     select t.idusuarioips, t.p ";
+		sql2+="from (select idusuarioips, sum(idconsulta)AS x, sum(idterapia) AS y, sum(idhospitalizacion)AS z, sum (idprocedimientoesp) AS p ";
+		sql2+="from cita ";
+		sql2+="group by idusuarioips)t ";
+		sql2+="where ";
+		sql2+="t.x is null ";
+		sql2+="and t.y is null ";
+		sql2+="and t.z is null ";
+		sql2+="and t.p > 0)t2, usuario_ips ";
+		sql2+="where t2.idusuarioips = usuario_ips.numdocumento ";
+		
+		Query q2 = pm.newQuery(SQL, sql2);
+		List<Object[]> listaProc = q2.executeList();
+
+
+		result += ("LOS AFILIADOS QUE SOLO SOLICITAN PROCEDIMIENTOS ESPECIALES SON: \n\n");
+
+		for(Object[] actual: listaProc) {
+
+			result += ("Nombre: " + actual[0] + " con numero de documento: " + actual[2] + ". Cantidad de procedimientos solicitados: " + actual[10] + "\n");   
+
+		}
+		
+		result += "\n\n";
+		
+		//usuarios hospitalizacion
+		
+		String sql3 = "select usuario_ips.*, t2.h as cantidadhospitalizaciones ";
+		sql3+="from(     select t.idusuarioips, t.h ";
+		sql3+="from (select idusuarioips, sum(idconsulta)AS x, sum(idterapia) AS y, sum(idhospitalizacion)AS h, sum (idprocedimientoesp) AS z ";
+		sql3+="from cita ";
+		sql3+="group by idusuarioips)t ";
+		sql3+="where ";
+		sql3+="t.x is null ";
+		sql3+="and t.y is null ";
+		sql3+="and t.z is null ";
+		sql3+="and t.h > 0)t2, usuario_ips ";
+		sql3+="where t2.idusuarioips = usuario_ips.numdocumento ";
+		
+		Query q3 = pm.newQuery(SQL, sql3);
+		List<Object[]> listaHosp = q3.executeList();
+
+
+		result += ("LOS AFILIADOS QUE SOLICITAN SS Y ACABAN EN HOSPITALIZACION SON: \n\n");
+
+		for(Object[] actual: listaHosp) {
+
+			result += ("Nombre: " + actual[0] + " con numero de documento: " + actual[2] + ". Cantidad de hospitalizaciones: " + actual[10] + "\n");   
+
+		}
+		
+		return result;
+
+	}
 
 }

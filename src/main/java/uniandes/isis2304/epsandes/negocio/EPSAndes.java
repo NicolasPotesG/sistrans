@@ -646,11 +646,23 @@ public class EPSAndes {
 		
 		log.info ("Obteniendo tipo de servicio mas consumido de la semana: " + semana);
 		
-		return pp.darTipoServicioMasConsumido(semana);
+		return pp.consultarFuncionamiento(semana);
 		
 		
 	}
 
+	
+	//Req # 12
+	
+	public String consultarAfiliadosCostosos() {
+		
+		log.info ("Obteniendo afiliados costosos");
+		
+		return pp.consultarAfiliadosCostosos();
+		
+		
+	}
+	
 	/* ****************************************************************
 	 * 			Métodos para administración
 	 *****************************************************************/
