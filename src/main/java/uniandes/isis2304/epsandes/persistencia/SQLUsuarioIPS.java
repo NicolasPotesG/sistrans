@@ -154,7 +154,7 @@ class SQLUsuarioIPS
 		String sql = " SELECT USUARIO_IPS.numdocumento, USUARIO_IPS.nombre , x.numero"+servicioSalud+",  USUARIO_IPS.estado, ";
 		sql +="               USUARIO_IPS.fechaNacimiento, USUARIO_IPS.esAfiliado,  USUARIO_IPS.correo, USUARIO_IPS.genero, USUARIO_IPS.edad " ;
 		sql +="        FROM( ";
-		sql +="                select usuario_ips.numdocumento, usuario_ips.nombre, count(usuario_ips.numdocumento)  numero"+servicioSalud;
+		sql +="                SELECT usuario_ips.numdocumento, usuario_ips.nombre, count(usuario_ips.numdocumento)  numero"+servicioSalud;
 		sql +="                FROM USUARIO_IPS INNER JOIN CITA ON USUARIO_IPS.numdocumento = CITA.idUSUARIOIPS ";
 		sql +="                INNER JOIN RECETA ON CITA.ID = RECETA.idCita ";
 		sql += tipoServicio;
@@ -163,6 +163,10 @@ class SQLUsuarioIPS
 		sql +="                GROUP BY (usuario_ips.numdocumento, usuario_ips.nombre  ) )x ";
 		
 		sql +="        INNER JOIN USUARIO_IPS ON X.numdocumento = USUARIO_IPS.numdocumento ";
+		sql +="        INNER JOIN EPS ON USUARIO_IPS.idEPS = EPS.id ";
+		sql +="        INNER JOIN IPS ON EPS.id = ips.idEPS ";
+		sql +="        WHERE  numero"+servicioSalud+" >"+numeroconsultas+" AND  ips.nombre LIKE '%"+nombreIPS+"%' ";
+		sql +="        order by X.numero"+servicioSalud+"  "+asendente;
 		
 	    Query q = pm.newQuery(SQL, sql);
 		List<Object[]> lista = q.executeList(); 	

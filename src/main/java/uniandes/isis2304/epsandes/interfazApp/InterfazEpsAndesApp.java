@@ -470,7 +470,7 @@ public class InterfazEpsAndesApp extends JFrame implements ActionListener {
 				numeroconsultas = "0";
 			}
 			String ascendente = "ASC";
-			ascendente = JOptionPane.showInputDialog("Dar el nombre de la IPS a la aque pertenece el afiliado. Por defecta es ascendente");
+			ascendente = JOptionPane.showInputDialog("ascendente o descendente. Por defecta es ascendente");
 			String servicioSalud = "";
 			servicioSalud = JOptionPane.showInputDialog("Dar el servicio de salud. /n 1 para consultas n/ 2 para procedimientos especiales /n 3 para hospitalizaciones /n 4 para terapias");
 			if(servicioSalud.equals("1")){
